@@ -12,7 +12,7 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <!-- build:css css/vendor.min.css -->
     <!-- bower:css-->
-    <link rel="stylesheet" href="/bower/normalize.css/normalize.css">
+    <link rel="stylesheet" href="bower/normalize.css/normalize.css">
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css css/main.min.css -->
@@ -28,12 +28,101 @@
 <p class="browsehappy">Вы используете <strong>устаревший</strong> браузер. Пожалуйста <a href="http://browsehappy.com/">обновите</a> его.</p>
 <![endif]-->
     <div class="wrapper">
-      <div class="first">hello world</div>
+      <div class="main-content">
+        <div class="header__container"> 
+          <div class="logo__container">
+            <a href="#" class="logo__link"><img src="" alt="" class="logo__img"></a>
+          </div>
+          <div class="cityselect__container">
+            <div class="cityselect__selected">Санкт-Петербург</div>
+            <ul class="cityselect__list">
+              <li data-value="" class="cityselect__item">Москва</li>
+              <li data-value="" class="cityselect__item">Санкт-Петербург</li>
+            </ul>
+          </div><address class="firm-address"><firm-address__text>Санкт-Петербург, пр.Обуховской Обороны, д.112/2, лит "И"</firm-address__text></address>
+          <div class="callback__container">
+            <p class="callback__phonenumber">(812) 495-49-50</p><a href="" class="callback__link">Обратный звонок</a></div>
+          <div class="topmenu__container">
+            <ul class="topmenu__list">
+              <li class="topmenu__item"><a href="#" class="topmenu__link">Области применения</a></li>
+              <li class="topmenu__item"><a href="#" class="topmenu__linkactive">Как мы работаем</a></li>
+              <li class="topmenu__item"><a href="#" class="topmenu__link">Отзывы </a></li>
+              <li class="topmenu__item"><a href="#" class="topmenu__link">О компании</a></li>
+              <li class="topmenu__item"><a href="#" class="topmenu__link">Контакты</a></li>
+            </ul>
+          </div>
+        </div>
+        <section class="section sec1">
+          <div class="main-title">Проведение тепловизионного обследования по всей территории РФ</div>
+        </section>
+        <section class="section sec2">
+          <div class="discount__inner">
+            <div class="discount__title">Хотите <span class="discoutn__title__light">15% скидку</span>на обследование ?</div>
+            <div class="order-form">
+              <div class="order-form__title">Оставьте заявку на сайте, получите скидку 15%</div>
+              <div class="order-form__group">
+                <input type="text" name="name" placeholder="Введите имя" class="order-form__input">
+              </div>
+              <div class="order-form__group">
+                <input type="text" name="email" placeholder="Введите e-mail" class="order-form__input">
+              </div>
+              <div class="order-form__group">
+                <button type="submit" class="order-form__btn">Получить скидку</button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section sec3">
+          <div class="section__title">Что такое тепловидение?</div>
+          <div class="section__text">Тепловидение - бесконтактный метод измерения температур, использующий видимую и инфракрасную области спектра светового излучения</div>
+        </section>
+        <section class="section sec4">
+          <div class="section__title">Области применения</div>
+          <ul class="uses_list">
+            <li class="uses__item">
+              <div class="uses__img-inner"><img src="" alt="" class="uses__img" /></div>
+              <div class="uses__desc">При приеме дома или квартиры от строителей</div>
+            </li>
+            <li class="uses__item">
+              <div class="uses__img-inner"><img src="" alt="" class="uses__img" /></div>
+              <div class="uses__desc">При покупке дома,коттеджа,квартиры</div>
+            </li>
+            <li class="uses__item">
+              <div class="uses__img-inner"><img src="" alt="" class="uses__img" /></div>
+              <div class="uses__desc">В процессе эксплуатации</div>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+    <div class="footer__container">
+      <div class="logo__container_footer">
+        <a href="#" class="logo__link"><img src="" alt="" class="logo__img"></a>
+      </div>
+      <div class="itstudio__container">
+        <a href="#" class="itstudio__link"><img src="" alt="" class="itstudio__img"></a>
+      </div>
+      <div class="ul contacts__list">
+        <li class="contacts__item">
+          <div class="contacts__text phone">(812) 495-49-50</div>
+        </li>
+        <li class="contacts__item">
+          <div class="contacts__text addr">Cанкт-Петербург, пр. Обуховской Обороны, д.1122 лит "И"</div>
+        </li>
+        <li class="contacts__item">
+          <div class="contacts__text email">zakaz@rbrgroup.ru</div>
+        </li>
+      </div>
     </div>
     <!-- build:js js/vendor.js -->
     <!--bower:js-->
-    <script src="/bower/jquery/dist/jquery.js"></script>
-    <!--endbower  -->
+    <script src="bower/jquery/dist/jquery.js"></script>
+    <!--endbower-->
+    <script src="js/jquery.mousewheel.min.js">
+    </script>
+    <!-- endbuild -->
+    <!-- build:js js/plugin.js -->
+    <script src="js/plugin.js"></script>
     <!-- endbuild -->
     <!-- build:js js/main.js -->
     <script src="js/main.js"></script>

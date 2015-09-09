@@ -1,0 +1,5 @@
+mixin list-item(c_name, img_src, img_alt, desc)
+  li(class=c_name + '__item')
+    div(class=c_name + '__img-inner')
+      img(src=img_src, alt=img_alt, class=c_name + '__img')
+    div(class=c_name + '__desc')= desc

@@ -2,6 +2,8 @@
 
 var gulp = require("gulp"),
     jade = require('gulp-jade'),
+    sass = require('gulp-sass'),
+    autoprefixer = require('gulp-autoprefixer'),
     prettify = require('gulp-prettify'),
     wiredep = require('wiredep').stream,
     useref = require('gulp-useref'),    
@@ -32,6 +34,24 @@ gulp.task('jade', function() {
     .pipe(reload({stream: true}));
 });
 
+// sass
+gulp.task('sass', function() {
+  return gulp.src('app/scss/*.scss')
+    .pipe(sass({
+      noCache: true,
+      style: "expanded",
+      lineNumbers: true,
+      errLogToConsole: true
+    }))
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions', 'ie 8', 'ie 9'],
+      cascade: false
+    }))
+    .pipe(gulp.dest('app/css'));
+});
+
+
+
 // Подключаем ссылки на bower components
 gulp.task('wiredep', function () {
   gulp.src('app/templates/common/*.jade')
@@ -56,9 +76,11 @@ gulp.task('server', ['jade'], function () {
 gulp.task('watch', function () {
   gulp.watch('app/templates/**/*.jade', ['jade']);
   gulp.watch('bower.json', ['wiredep']);
+  gulp.watch('app/scss/*.scss', ['sass']);
   gulp.watch([
     'app/js/**/*.js',
-    'app/css/**/*.css'
+    'app/css/**/*.css',
+    'app/scss/**/.scss'
   ]).on('change', reload);
 });
 

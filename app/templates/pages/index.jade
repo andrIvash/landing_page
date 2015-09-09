@@ -1,8 +1,34 @@
 extends ../layouts/main_layout.jade
+include ../common/mixin.jade
 
 block title
   title Главная страница 
 
 block content
-  .first hello world
-  
+  .main-content
+    include ../common/header.jade
+    section.section.sec1
+      .main-title Проведение тепловизионного обследования по всей территории РФ
+    section.section.sec2
+      .discount__inner
+        .discount__title
+          | Хотите 
+          span.discoutn__title__light 15% скидку
+          | на обследование ?
+        .order-form
+          .order-form__title Оставьте заявку на сайте, получите скидку 15%
+          .order-form__group
+            input(type="text", class="order-form__input", name="name", placeholder="Введите имя")
+          .order-form__group
+            input(type="text", class="order-form__input", name="email", placeholder="Введите e-mail")
+          .order-form__group
+            button(type="submit", class="order-form__btn") Получить скидку !
+    section.section.sec3
+      .section__title Что такое тепловидение?
+      .section__text Тепловидение - бесконтактный метод измерения температур, использующий видимую и инфракрасную области спектра светового излучения
+    section.section.sec4
+      .section__title Области применения
+      ul.uses_list
+        +list-item('uses', '', '', 'При приеме дома или квартиры от строителей')
+        +list-item('uses', '', '', 'При покупке дома,коттеджа,квартиры')
+        +list-item('uses', '', '', 'В процессе эксплуатации')
