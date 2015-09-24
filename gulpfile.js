@@ -6,7 +6,7 @@ var gulp = require("gulp"),
     autoprefixer = require('gulp-autoprefixer'),
     prettify = require('gulp-prettify'),
     wiredep = require('wiredep').stream,
-    useref = require('gulp-useref'),    
+    useref = require('gulp-useref'),
     uglify = require('gulp-uglify'),
     clean = require('gulp-clean'),
     gulpif = require('gulp-if'),
@@ -18,7 +18,7 @@ var gulp = require("gulp"),
     browserSync = require('browser-sync'),
     gutil = require('gulp-util'),
     reload = browserSync.reload;
-
+ 
 
 // ====================================================
 // ====================================================
@@ -62,17 +62,17 @@ gulp.task('wiredep', function () {
 });
 
 // Запускаем локальный сервер (только после компиляции jade)
-gulp.task('server', ['jade'], function () {  
+gulp.task('server', ['jade'], function () {
   browserSync({
     notify: false,
     port: 9000,
     server: {
       baseDir: 'app'
     }
-  });  
+  });
 });
 
-// слежка и запуск задач 
+// слежка и запуск задач
 gulp.task('watch', function () {
   gulp.watch('app/templates/**/*.jade', ['jade']);
   gulp.watch('bower.json', ['wiredep']);
@@ -84,7 +84,7 @@ gulp.task('watch', function () {
   ]).on('change', reload);
 });
 
-// Задача по-умолчанию 
+// Задача по-умолчанию
 gulp.task('default', ['server', 'watch']);
 
 
@@ -98,7 +98,7 @@ gulp.task('clean', function () {
     .pipe(clean());
 });
 
-// Переносим HTML, CSS, JS в папку dist 
+// Переносим HTML, CSS, JS в папку dist
 gulp.task('useref', function () {
   var assets = useref.assets();
   return gulp.src('app/*.html')
@@ -145,8 +145,8 @@ gulp.task('build', ['clean', 'jade'], function () {
   gulp.start('dist');
 });
 
-// Проверка сборки 
-gulp.task('server-dist', function () {  
+// Проверка сборки
+gulp.task('server-dist', function () {
   browserSync({
     notify: false,
     port: 9000,
@@ -173,5 +173,3 @@ var log = function (error) {
   ].join('\n'));
   this.end();
 }
-
-
